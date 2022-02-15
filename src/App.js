@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import SelectMenu from './components/SelectMenu';
+import Label from './lib/components/Label';
+import SelectMenu from './lib/components/SelectMenu';
 
 const exampleArray = [
     'fox',
@@ -32,8 +33,8 @@ function App() {
 
     const newDataArray = data.map(color => {
         return {
-            label: color.colorName,
-            value: color.colorRef,
+            optionLabel: color.colorName,
+            optionValue: color.colorRef,
         };
     });
 
@@ -44,33 +45,23 @@ function App() {
         inputName(e.target.value);
     };
 
-    // const colorsNames = [];
-    // const colorsRefs = [];
-    // data.forEach(option => {
-    //     colorsNames.push(option.colorName);
-    //     colorsRefs.push(option.colorValue);
-    // });
-
-    // const colorRef = colorsRefs[colorsNames.indexOf(colorName)];
-
-    // console.log(data);
-    // console.log(colorName);
-    // console.log(colorsNames);
-    // console.log(colorsNames.indexOf(colorName));
-    // console.log(colorsRefs[colorsNames.indexOf(colorName)]);
-
     console.log(color);
     console.log(animal);
     return (
         <div className="App container">
             <div className="container m-3">
                 <div className="col w-100">
-                    <SelectMenu
+                    <Label
                         label="Animal"
-                        ariaLabel="Select an animal"
-                        inputName="animal"
+                        htmlFor="animal"
+                        labelClassName="text-dark"
+                        labelStyle={{ fontWeight: 'bold' }}
+                    />
+                    <SelectMenu
+                        selectName="animal"
                         idHtmlFor="animal"
                         selectText="Select ..."
+                        isDisabled={true}
                         data={exampleArray}
                         value={animal}
                         onChange={e => handleChange(e, setAnimal)}
@@ -79,24 +70,24 @@ function App() {
             </div>
             <div className="container m-3">
                 <div className="col w-100">
-                    <SelectMenu
+                    <Label
                         label="Color"
-                        ariaLabel="Select a color"
-                        inputName="color"
+                        htmlFor="color"
+                        labelClassName="text-dark"
+                        labelStyle={{ fontWeight: 'bold' }}
+                    />
+                    <SelectMenu
+                        selectName="color"
                         idHtmlFor="color"
-                        // data={data}
-                        data={newDataArray}
-                        onChange={e => handleChange(e, setColor)}
                         selectText="Select ..."
-                        // labelClassName="text-dark"
-                        // styleLabel={{ fontWeight: 'bold' }}
-                        // selectClassName=""
-                        // selectSizing=""
-                        // styleSelect={{ color: color }}
+                        selectClassName=""
+                        selectSizing=""
+                        selectStyle={{ color: color }}
                         // isDisabled={false}
 
-                        // data={colorsNames}
-                        // value={color}
+                        data={newDataArray}
+                        value={color}
+                        onChange={e => handleChange(e, setColor)}
                     />
                     {color !== '' && (
                         <div className="rounded-3 border p-2 " style={{ backgroundColor: color }}>

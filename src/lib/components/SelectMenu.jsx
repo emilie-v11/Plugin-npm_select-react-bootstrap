@@ -3,30 +3,18 @@ import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const SelectMenu = ({
-    inputName,
-    ariaLabel,
+    selectName,
     idHtmlFor,
-    label,
     value,
     onChange,
     selectText,
     data,
-    labelClassName,
-    styleLabel,
     selectClassName,
-    styleSelect,
+    selectStyle,
     selectSizing,
     isDisabled,
 }) => {
     return (
-        <>
-            <label
-                className={'form-label ' + (labelClassName !== undefined && labelClassName)}
-                style={styleLabel}
-                htmlFor={idHtmlFor}
-            >
-                {label}
-            </label>
             <select
                 className={
                     'form-select ' +
@@ -35,9 +23,8 @@ const SelectMenu = ({
                         (selectSizing === 'small' && 'form-select-sm') ||
                         '')
                 }
-                style={styleSelect}
-                aria-label={ariaLabel}
-                name={inputName}
+                style={selectStyle}
+                name={selectName}
                 id={idHtmlFor}
                 value={value}
                 onChange={onChange}
@@ -45,16 +32,10 @@ const SelectMenu = ({
                 <option value={''} disabled={isDisabled}>
                     {selectText}
                 </option>
-                {/* {data.map((item, index) => (
-                    <option key={index} value={item}>
-                        {item}
-                    </option>
-                ))} */}
-
                 {typeof data[0] === 'object'
                     ? data.map((item, index) => (
-                          <option key={index} value={item.value}>
-                              {item.label}
+                          <option key={index} value={item.optionValue}>
+                              {item.optionLabel}
                           </option>
                       ))
                     : data.map((item, index) => (
@@ -63,21 +44,19 @@ const SelectMenu = ({
                           </option>
                       ))}
             </select>
-        </>
     );
 };
 
 SelectMenu.propTypes = {
-    inputName: PropTypes.string.isRequired,
-    ariaLabel: PropTypes.string.isRequired,
+    selectName: PropTypes.string.isRequired,
     idHtmlFor: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    value: PropTypes.string,
-    onChange: PropTypes.func.isRequired,
-    data: PropTypes.array.isRequired,
     selectText: PropTypes.string,
     isDisabled: PropTypes.bool,
     selectSizing: PropTypes.string,
+    selectStyle: PropTypes.object,
+    data: PropTypes.array.isRequired,
+    value: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
 };
 
 export default SelectMenu;
