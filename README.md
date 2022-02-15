@@ -143,30 +143,41 @@ export default function App() {
 
 ### For Label component:
 
-| Prop      | Type   | Default    | Required | Description                                                                                                           |
-| --------- | ------ | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------- |
-| label     | string |            |     X    | Label, content displayed above the select component.                                                                  |
-| htmlFor   | string |            |     X    | Attribut htmlFor, must be the same as the select id.                                                                  |
-| className | string | form-label |          | Add personal className or Bootstrap className.                                                                        |
-| style     | object |            |          | Add style-in-line for customize the label. All CSS are allowed.                                                       |
+| Prop      | Type   | Default    | Required | Description                                                     |
+| --------- | ------ | ---------- | -------- | --------------------------------------------------------------- |
+| label     | string |            | X        | Label, content displayed above the select component.            |
+| htmlFor   | string |            | X        | Attribut htmlFor, must be the same as the select id.            |
+| className | string | form-label |          | Add personal className or Bootstrap className.                  |
+| style     | object |            |          | Add style-in-line for customize the label. All CSS are allowed. |
 
 ### For Select component:
 
 | Prop       | Type     | Default         | Required | Description                                                                                                   |
 | ---------- | -------- | --------------- | -------- | ------------------------------------------------------------------------------------------------------------- |
-| name       | string   |                 |     X    | Name of the select component.                                                                                 |
-| id         | string   |                 |     X    | Attribut id, must be the same as the label htmlFor.                                                           |
+| name       | string   |                 | X        | Name of the select component.                                                                                 |
+| id         | string   |                 | X        | Attribut id, must be the same as the label htmlFor.                                                           |
 | selectText | string   |                 |          | Content of the first option visible when the select is closed. The value is empty.                            |
 | className  | string   | form-select     |          | Add personal className or Bootstrap className.                                                                |
 | sizing     | string   |                 |          | 3 sizes: by default medium when empty, or choose 'large' or 'small' custom selects'.                          |
 | style      | object   |                 |          | Add style-in-line for customize the select menu.                                                              |
 | isDisabled | boolean  | false           |          | when it's 'true' the first option (selectText prop) will be disabled.                                         |
-| data       | array    | array of string |     X    | Map an array of string for option list. For array of object change keys names with optionLabel & optionValue. |
-| value      | string   |                 |     X    | The value prop is required with the useState Hook for manage the value.                                       |
-| onChange   | function | array of string |     X    | A function 'onChange' for manage the change of value.                                                         |
-
+| data       | array    | array of string | X        | Map an array of string for option list. For array of object change keys names with optionLabel & optionValue. |
+| value      | string   |                 | X        | The value prop is required with the useState Hook for manage the value.                                       |
+| onChange   | function | array of string | X        | A function 'onChange' for manage the change of value.                                                         |
 
 ## Dependencies
+
+### React
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+**Installation Create React App**
+
+`npx create-react-app nameOfYourProject`
+
+**Import React**
+
+`import React, { useState } from 'react';`
 
 ### Bootstrap 5
 
