@@ -181,7 +181,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Bootstrap 5
 
-Make sure _Bootstrap 5_ is installed in you project or required to install it and css needs to imported in project:
+Make sure [Bootstrap 5](https://getbootstrap.com/) is installed in you project or required to install it and css needs to imported in project:
 
 **Installation bootstrap**
 
@@ -193,7 +193,7 @@ Make sure _Bootstrap 5_ is installed in you project or required to install it an
 
 ### PropTypes
 
-I also use Proptypes:
+I also use [Proptypes](https://github.com/facebook/prop-types):
 
 **Installation Proptypes**
 
