@@ -143,12 +143,12 @@ export default function App() {
 
 ### For Label component:
 
-| Prop      | Type   | Default    | Required | Description                                                     |
-| --------- | ------ | ---------- | -------- | --------------------------------------------------------------- |
-| label     | string |            |     X    | Label, content displayed above the select component.            |
-| htmlFor   | string |            |     X    | Attribut htmlFor, must be the same as the select id.            |
-| className | string | form-label |          | Add personal className or Bootstrap className.                  |
-| style     | object |            |          | Add style-in-line for customize the label. All CSS are allowed. |
+| Prop      | Type   | Default    | Required | Description                                                                                                           |
+| --------- | ------ | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------- |
+| label     | string |            |     X    | Label, content displayed above the select component.                                                                  |
+| htmlFor   | string |            |     X    | Attribut htmlFor, must be the same as the select id.                                                                  |
+| className | string | form-label |          | Add personal className or Bootstrap className.                                                                        |
+| style     | object |            |          | Add style-in-line for customize the label. All CSS are allowed.                                                       |
 
 ### For Select component:
 
