@@ -16,19 +16,29 @@ const exampleArray = [
 ];
 
 const data = [
-    { name: 'pink', value: '#E260D2' },
-    { name: 'red', value: '#FF0000' },
-    { name: 'blue', value: '#3876AC' },
-    { name: 'yellow', value: '#FBE468' },
-    { name: 'gray', value: '#C4C4C4' },
-    { name: 'orange', value: '#EC5B24' },
-    { name: 'green', value: '#279E7A' },
-    { name: 'purple', value: '#7360D2' },
+    { colorName: 'pink', colorRef: '#E260D2' },
+    { colorName: 'red', colorRef: '#FF0000' },
+    { colorName: 'blue', colorRef: '#3876AC' },
+    { colorName: 'yellow', colorRef: '#FBE468' },
+    { colorName: 'gray', colorRef: '#C4C4C4' },
+    { colorName: 'orange', colorRef: '#EC5B24' },
+    { colorName: 'green', colorRef: '#279E7A' },
+    { colorName: 'purple', colorRef: '#7360D2' },
 ];
 
 function App() {
     const [animal, setAnimal] = useState('');
     const [color, setColor] = useState('');
+
+    const newDataArray = data.map(color => {
+        return {
+            label: color.colorName,
+            value: color.colorRef,
+        };
+    });
+
+    console.log(data);
+    console.log(newDataArray);
 
     const handleChange = (e, inputName) => {
         inputName(e.target.value);
@@ -74,7 +84,8 @@ function App() {
                         ariaLabel="Select a color"
                         inputName="color"
                         idHtmlFor="color"
-                        data={data}
+                        // data={data}
+                        data={newDataArray}
                         onChange={e => handleChange(e, setColor)}
                         selectText="Select ..."
                         // labelClassName="text-dark"

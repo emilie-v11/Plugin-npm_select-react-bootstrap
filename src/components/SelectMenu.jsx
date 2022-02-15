@@ -54,7 +54,7 @@ const SelectMenu = ({
                 {typeof data[0] === 'object'
                     ? data.map((item, index) => (
                           <option key={index} value={item.value}>
-                              {item.name}
+                              {item.label}
                           </option>
                       ))
                     : data.map((item, index) => (
