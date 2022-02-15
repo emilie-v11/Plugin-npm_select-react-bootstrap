@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Label = ({ label, htmlFor, labelClassName, labelStyle }) => {
+const Label = ({ label, htmlFor, className, style }) => {
     return (
         <label
-            className={'form-label ' + (labelClassName !== undefined && labelClassName)}
-            style={labelStyle}
+            className={'form-label ' + (className !== undefined && className)}
+            style={style}
             htmlFor={htmlFor}
         >
             {label}
@@ -17,8 +17,8 @@ const Label = ({ label, htmlFor, labelClassName, labelStyle }) => {
 Label.propTypes = {
     label: PropTypes.string.isRequired,
     htmlFor: PropTypes.string.isRequired,
-    labelClassName: PropTypes.string,
-    labelStyle: PropTypes.object,
+    className: PropTypes.string,
+    style: PropTypes.object,
 };
 
 export default Label;

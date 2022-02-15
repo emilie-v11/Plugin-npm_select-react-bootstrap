@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Label from './lib/components/Label';
-import SelectMenu from './lib/components/SelectMenu';
+import Select from './lib/components/Select';
 
-const exampleArray = [
+const arrayOfString = [
     'fox',
     'bird',
     'dog',
@@ -16,7 +16,7 @@ const exampleArray = [
     'snake',
 ];
 
-const data = [
+const arrayOfObject = [
     { colorName: 'pink', colorRef: '#E260D2' },
     { colorName: 'red', colorRef: '#FF0000' },
     { colorName: 'blue', colorRef: '#3876AC' },
@@ -31,15 +31,15 @@ function App() {
     const [animal, setAnimal] = useState('');
     const [color, setColor] = useState('');
 
-    const newDataArray = data.map(color => {
+    const newArrayOfObject = arrayOfObject.map(color => {
         return {
             optionLabel: color.colorName,
             optionValue: color.colorRef,
         };
     });
 
-    console.log(data);
-    console.log(newDataArray);
+    console.log(arrayOfObject);
+    console.log(newArrayOfObject);
 
     const handleChange = (e, inputName) => {
         inputName(e.target.value);
@@ -48,56 +48,103 @@ function App() {
     console.log(color);
     console.log(animal);
     return (
-        <div className="App container">
-            <div className="container m-3">
-                <div className="col w-100">
-                    <Label
-                        label="Animal"
-                        htmlFor="animal"
-                        labelClassName="text-dark"
-                        labelStyle={{ fontWeight: 'bold' }}
-                    />
-                    <SelectMenu
-                        selectName="animal"
-                        idHtmlFor="animal"
-                        selectText="Select ..."
-                        isDisabled={true}
-                        data={exampleArray}
-                        value={animal}
-                        onChange={e => handleChange(e, setAnimal)}
-                    />
-                </div>
-            </div>
-            <div className="container m-3">
-                <div className="col w-100">
-                    <Label
-                        label="Color"
-                        htmlFor="color"
-                        labelClassName="text-dark"
-                        labelStyle={{ fontWeight: 'bold' }}
-                    />
-                    <SelectMenu
-                        selectName="color"
-                        idHtmlFor="color"
-                        selectText="Select ..."
-                        selectClassName=""
-                        selectSizing=""
-                        selectStyle={{ color: color }}
-                        // isDisabled={false}
+        <div className="container">
+            <Label
+                label="Animal"
+                htmlFor="animal"
+                className="text-dark"
+                style={{ fontWeight: 'bold' }}
+            />
+            <Select
+                name="animal"
+                id="animal"
+                selectText="Select ..."
+                isDisabled={true}
+                data={arrayOfString}
+                value={animal}
+                onChange={e => handleChange(e, setAnimal)}
+                // onChange={handleChange}
+            />
 
-                        data={newDataArray}
-                        value={color}
-                        onChange={e => handleChange(e, setColor)}
-                    />
-                    {color !== '' && (
-                        <div className="rounded-3 border p-2 " style={{ backgroundColor: color }}>
-                            <p className="m-0 ">{color}</p>
-                        </div>
-                    )}
+            <Label
+                label="Color"
+                htmlFor="color"
+                className="text-dark"
+                style={{ fontWeight: 'bold' }}
+            />
+            <Select
+                name="color"
+                id="color"
+                selectText="Select ..."
+                className=""
+                sizing=""
+                style={{ color: color }}
+                // isDisabled={false}
+
+                data={newArrayOfObject}
+                value={color}
+                onChange={e => handleChange(e, setColor)}
+                // onChange={handleChange}
+            />
+            {color !== '' && (
+                <div className="rounded-3 border p-2 " style={{ backgroundColor: color }}>
+                    <p className="m-0 ">{color}</p>
                 </div>
-            </div>
+            )}
         </div>
     );
+    // <div className="App container">
+    //     <div className="container m-3">
+    //         <div className="col w-100">
+    //             <Label
+    //                 label="Animal"
+    //                 htmlFor="animal"
+    //                 labelClassName="text-dark"
+    //                 labelStyle={{ fontWeight: 'bold' }}
+    //             />
+    //             <SelectMenu
+    //                 selectName="animal"
+    //                 idHtmlFor="animal"
+    //                 selectText="Select ..."
+    //                 isDisabled={true}
+    //                 data={arrayOfString}
+    //                 value={animal}
+    //                 // onChange={e => handleChange(e, setAnimal)}
+    //                 onChange={handleChange}
+    //             />
+    //         </div>
+    //     </div>
+    //  <div className="container m-3">
+    //     <div className="col w-100">
+    //         <Label
+    //             label="Color"
+    //             htmlFor="color"
+    //             labelClassName="text-dark"
+    //             labelStyle={{ fontWeight: 'bold' }}
+    //         />
+    //         <SelectMenu
+    //             selectName="color"
+    //             idHtmlFor="color"
+    //             selectText="Select ..."
+    //             selectClassName=""
+    //             selectSizing=""
+    //             selectStyle={{ color: color }}
+    //             // isDisabled={false}
+
+    //             data={newArrayOfObject}
+    //             value={color}
+    //             // onChange={e => handleChange(e, setColor)}
+    //             onChange={handleChange}
+    //         />
+    //         {color !== '' && (
+    //             <div className="rounded-3 border p-2 " style={{ backgroundColor: color }}>
+    //                 <p className="m-0 ">{color}</p>
+    //             </div>
+    //         )}
+    //     </div>
+    // </div>
+    // </div>
+    // );
 }
 
 export default App;
