@@ -18,9 +18,9 @@ const Select = ({
         <select
             className={
                 'form-select ' +
-                ((className !== undefined && className) ||
-                    (sizing !== false && sizing === 'large' && 'form-select-lg') ||
-                    (sizing === 'small' && 'form-select-sm') ||
+                (className !== undefined && className) +
+                ((sizing !== false && sizing === 'large' && ' form-select-lg ') ||
+                    (sizing === 'small' && ' form-select-sm ') ||
                     '')
             }
             style={style}

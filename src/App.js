@@ -38,8 +38,15 @@ function App() {
         };
     });
 
-    console.log(arrayOfObject);
     console.log(newArrayOfObject);
+    //     [{ optionLabel: 'pink', optionValue: '#E260D2' },
+    //     { optionLabel: 'red', optionValue: '#FF0000' },
+    //     { optionLabel: 'blue', optionValue: '#3876AC' },
+    //     { optionLabel: 'yellow', optionValue: '#FBE468' },
+    //     { optionLabel: 'gray', optionValue: '#C4C4C4' },
+    //     { optionLabel: 'orange', optionValue: '#EC5B24' },
+    //     { optionLabel: 'green', optionValue: '#279E7A' },
+    //     { optionLabel: 'purple', optionValue: '#7360D2' }];
 
     const handleChange = (e, inputName) => {
         inputName(e.target.value);
@@ -52,7 +59,7 @@ function App() {
             <Label
                 label="Animal"
                 htmlFor="animal"
-                className="text-dark"
+                className="text-dark mt-3"
                 style={{ fontWeight: 'bold' }}
             />
             <Select
@@ -63,28 +70,25 @@ function App() {
                 data={arrayOfString}
                 value={animal}
                 onChange={e => handleChange(e, setAnimal)}
-                // onChange={handleChange}
             />
 
             <Label
                 label="Color"
                 htmlFor="color"
-                className="text-dark"
+                className="text-dark mt-3"
                 style={{ fontWeight: 'bold' }}
             />
             <Select
                 name="color"
                 id="color"
                 selectText="Select ..."
-                className=""
-                sizing=""
+                className="select-color mb-2"
+                sizing="large"
                 style={{ color: color }}
-                // isDisabled={false}
-
+                isDisabled={false}
                 data={newArrayOfObject}
                 value={color}
                 onChange={e => handleChange(e, setColor)}
-                // onChange={handleChange}
             />
             {color !== '' && (
                 <div className="rounded-3 border p-2 " style={{ backgroundColor: color }}>
@@ -93,58 +97,6 @@ function App() {
             )}
         </div>
     );
-    // <div className="App container">
-    //     <div className="container m-3">
-    //         <div className="col w-100">
-    //             <Label
-    //                 label="Animal"
-    //                 htmlFor="animal"
-    //                 labelClassName="text-dark"
-    //                 labelStyle={{ fontWeight: 'bold' }}
-    //             />
-    //             <SelectMenu
-    //                 selectName="animal"
-    //                 idHtmlFor="animal"
-    //                 selectText="Select ..."
-    //                 isDisabled={true}
-    //                 data={arrayOfString}
-    //                 value={animal}
-    //                 // onChange={e => handleChange(e, setAnimal)}
-    //                 onChange={handleChange}
-    //             />
-    //         </div>
-    //     </div>
-    //  <div className="container m-3">
-    //     <div className="col w-100">
-    //         <Label
-    //             label="Color"
-    //             htmlFor="color"
-    //             labelClassName="text-dark"
-    //             labelStyle={{ fontWeight: 'bold' }}
-    //         />
-    //         <SelectMenu
-    //             selectName="color"
-    //             idHtmlFor="color"
-    //             selectText="Select ..."
-    //             selectClassName=""
-    //             selectSizing=""
-    //             selectStyle={{ color: color }}
-    //             // isDisabled={false}
-
-    //             data={newArrayOfObject}
-    //             value={color}
-    //             // onChange={e => handleChange(e, setColor)}
-    //             onChange={handleChange}
-    //         />
-    //         {color !== '' && (
-    //             <div className="rounded-3 border p-2 " style={{ backgroundColor: color }}>
-    //                 <p className="m-0 ">{color}</p>
-    //             </div>
-    //         )}
-    //     </div>
-    // </div>
-    // </div>
-    // );
 }
 
 export default App;
