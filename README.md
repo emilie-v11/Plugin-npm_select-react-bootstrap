@@ -4,6 +4,8 @@ A custom Select designed to behave like regular select form control, and develop
 
 ## Installation & Usage
 
+[select-react-bootstrap](https://www.npmjs.com/package/select-react-bootstrap)
+
 `npm i select-react-bootstrap --save`
 
 ### With React Hooks
