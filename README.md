@@ -18,8 +18,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Label from './lib/components/Label';
-import Select from './lib/components/Select';
+import Label from 'select-react-bootstrap';
+import Select from 'select-react-bootstrap';
 
 const arrayOfString = [
     'fox',
@@ -76,8 +76,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Label from './lib/components/Label';
-import Select from './lib/components/Select';
+import Label from 'select-react-bootstrap';
+import Select from 'select-react-bootstrap';
 
 const arrayOfObject = [
     { colorName: 'pink', colorRef: '#E260D2' },
